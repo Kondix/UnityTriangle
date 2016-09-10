@@ -1,4 +1,6 @@
-/[Ll]ibrary/
+/[Ll]ibrary/ShaderCache
+/[Ll]ibrary/ScriptAssemblies
+/[Ll]ibrary/metadata
 /[Tt]emp/
 /[Oo]bj/
 /[Bb]uild/
@@ -28,3 +30,4 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+*.log
