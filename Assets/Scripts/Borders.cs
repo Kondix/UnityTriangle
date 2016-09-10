@@ -13,8 +13,6 @@ public class Borders : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        LogTrianglePosition(GetViewportPoint());
-        Debug.Log("Is triangle in sight: " + isInSight(GetViewportPoint()));
     }
 
     Vector3 GetScreenPoint ()
