@@ -15,16 +15,20 @@ public class TriangleBehaviour : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         transform.Rotate(new Vector3(0, 0, 1) * Time.deltaTime * fTiltAngle);
-        if (Input.GetMouseButtonDown(0))
+        if (Input.touchCount == 1)
         {
-            if (CastRay())
+            if (Input.GetTouch(0).phase == TouchPhase.Ended || Input.GetTouch(0).phase == TouchPhase.Canceled)
+            //if (Input.GetMouseButtonDown(0))
             {
-                Debug.Log("Raycast hit.");
-                MoveToNewPosition();
-            }
-            else
-            {
-                //gameover
+                if (CastRay())
+                {
+                    Debug.Log("Raycast hit.");
+                    MoveToNewPosition();
+                }
+                else
+                {
+                    //gameover
+                }
             }
         }
     }
