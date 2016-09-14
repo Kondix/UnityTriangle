@@ -12,12 +12,14 @@ public class TriangleBehaviour : MonoBehaviour {
     RaycastHit hit;
     public Camera m_camera;
 
+	//SpawnDot spawner;
     bool bMovement;
     bool bHit;
     // Use this for initialization
     void Start () {
         bMovement = false;
-        bHit = false;	
+		bHit = false;
+		//spawner = FindObjectOfType<>;
 	}
 	
 	// Update is called once per frame
@@ -42,10 +44,11 @@ public class TriangleBehaviour : MonoBehaviour {
             return;
         }
 
-        if (hit.transform.gameObject.transform.position == null || IsInRange(CountDistance(transform.position, hit.transform.gameObject.transform.position), fStopRange))
+		if (hit.transform.gameObject == null || hit.transform.gameObject.transform.position == null || IsInRange(CountDistance(transform.position, hit.transform.gameObject.transform.position), fStopRange))
         {
             bMovement = false;
             Destroy(hit.transform.gameObject);
+			//spawner.DeleteDot();
         }
     }
 
