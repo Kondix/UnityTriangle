@@ -36,7 +36,8 @@ public class SpawnDot : MonoBehaviour {
 
 	void Spawn()
 	{
-		Vector3 screenPosition = Camera.main.ScreenToWorldPoint(new Vector3(Random.Range(0,Screen.width), Random.Range(0,Screen.height), 10)); // heheh z = -10
+        
+        Vector3 screenPosition = Camera.main.ScreenToWorldPoint(new Vector3(Random.Range(Screen.width / 10, Screen.width - Screen.width / 10), Random.Range(Screen.height / 10, Screen.height - Screen.height / 10), 10)); // heheh z = -10
 		lDots.Add(Instantiate (Dots, screenPosition, Quaternion.identity));
         bSpawned = true;
 	}
